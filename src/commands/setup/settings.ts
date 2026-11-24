@@ -94,7 +94,6 @@ export async function updateSettings(options: SetupOptions, claudeDir: string) {
   if (!settings.permissions) {
     settings.permissions = {};
   }
-  settings.permissions.defaultMode = "bypassPermissions";
   if (!settings.permissions.deny) {
     settings.permissions.deny = [];
   }

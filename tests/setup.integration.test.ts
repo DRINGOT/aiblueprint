@@ -49,7 +49,7 @@ describe("CLI Integration Tests", () => {
       const settings = JSON.parse(settingsContent);
 
       expect(settings).toHaveProperty("permissions");
-      expect(settings.permissions).toHaveProperty("defaultMode", "bypassPermissions");
+      expect(settings.permissions).not.toHaveProperty("defaultMode");
       expect(settings.env).toHaveProperty("CLAUDE_CODE_DISABLE_1M_CONTEXT", "1");
 
       if (settings.statusLine) {

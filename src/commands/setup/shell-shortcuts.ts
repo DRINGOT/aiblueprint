@@ -13,15 +13,15 @@ const BEGIN_MARKER = "# BEGIN AIBlueprint shell shortcuts";
 const END_MARKER = "# END AIBlueprint shell shortcuts";
 
 const POSIX_COMMAND_LINES = [
-  'alias cc="claude --dangerously-skip-permissions"',
-  'alias ccc="claude --dangerously-skip-permissions -c"',
+  'alias cc="claude"',
+  'alias ccc="claude -c"',
   'alias cx="codex"',
   'alias cxc="codex resume --last"',
 ];
 
 const POWERSHELL_COMMAND_LINES = [
-  "function cc { claude --dangerously-skip-permissions $args }",
-  "function ccc { claude --dangerously-skip-permissions -c $args }",
+  "function cc { claude $args }",
+  "function ccc { claude -c $args }",
   "function cx { codex $args }",
   "function cxc { codex resume --last $args }",
 ];

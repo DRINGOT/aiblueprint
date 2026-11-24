@@ -6,7 +6,8 @@ import { getVersion } from "./version.js";
 const TELEMETRY_URL = "https://codelynx.dev/api/cli/events";
 
 const isDisabled = () => {
-  return process.env.AIBLUEPRINT_TELEMETRY_DISABLED === "1";
+  // Telemetry hard-disabled in this fork.
+  return true;
 };
 
 const getBasePayload = () => ({

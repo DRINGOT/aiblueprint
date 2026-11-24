@@ -40,12 +40,12 @@ describe("Windows Platform Support", () => {
 
       expect(fs.writeFile).toHaveBeenCalledWith(
         path.join("C:\\Users\\TestUser", "Documents", "PowerShell", "Profile.ps1"),
-        expect.stringContaining("function cc { claude --dangerously-skip-permissions $args }")
+        expect.stringContaining("function cc { claude $args }")
       );
 
       expect(fs.writeFile).toHaveBeenCalledWith(
         expect.any(String),
-        expect.stringContaining("function ccc { claude --dangerously-skip-permissions -c $args }")
+        expect.stringContaining("function ccc { claude -c $args }")
       );
 
       expect(fs.writeFile).toHaveBeenCalledWith(
@@ -187,7 +187,7 @@ describe("macOS Platform (unchanged behavior)", () => {
 
     expect(fs.writeFile).toHaveBeenCalledWith(
       path.join("/Users/TestUser", ".zshenv"),
-      expect.stringContaining('alias cc="claude --dangerously-skip-permissions"')
+      expect.stringContaining('alias cc="claude"')
     );
 
     expect(fs.writeFile).toHaveBeenCalledWith(
@@ -209,8 +209,8 @@ describe("macOS Platform (unchanged behavior)", () => {
     vi.mocked(fs.readFile).mockResolvedValue(
       [
         "# AIBlueprint Claude Code aliases",
-        'alias cc="claude --dangerously-skip-permissions"',
-        'alias ccc="claude --dangerously-skip-permissions -c"',
+        'alias cc="claude"',
+        'alias ccc="claude -c"',
       ].join("\n") as any,
     );
 
@@ -287,7 +287,7 @@ describe("Linux Platform (unchanged behavior)", () => {
 
     expect(fs.writeFile).toHaveBeenCalledWith(
       path.join("/home/testuser", ".bashrc"),
-      expect.stringContaining('alias cc="claude --dangerously-skip-permissions"')
+      expect.stringContaining('alias cc="claude"')
     );
 
     expect(fs.writeFile).toHaveBeenCalledWith(
@@ -319,7 +319,7 @@ describe("Linux Platform (unchanged behavior)", () => {
 
     expect(fs.writeFile).toHaveBeenCalledWith(
       path.join("/home/testuser", ".zshrc"),
-      expect.stringContaining('alias cc="claude --dangerously-skip-permissions"')
+      expect.stringContaining('alias cc="claude"')
     );
 
     expect(fs.writeFile).toHaveBeenCalledWith(

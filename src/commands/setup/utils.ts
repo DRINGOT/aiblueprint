@@ -20,7 +20,7 @@ export class SimpleSpinner {
   }
 }
 
-const GITHUB_REPO = "https://github.com/Melvynx/aiblueprint.git";
+const GITHUB_REPO = "https://github.com/DRINGOT/aiblueprint.git";
 
 export async function cloneRepository(): Promise<string | null> {
   const tmpDir = path.join(os.tmpdir(), `aiblueprint-${Date.now()}`);
